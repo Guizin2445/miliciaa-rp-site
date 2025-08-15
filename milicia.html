@@ -1,143 +1,299 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Regras - Milícia RP</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0e0e0e;
-      color: #ffffff;
-    }
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #ff0000;
-    }
-    h1 {
-      color: #ff0000;
-      margin: 0;
-      font-size: 2rem;
-    }
-    .container {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      border-left: 5px solid #ff0000;
-      padding-left: 10px;
-      color: #ff0000;
-      margin-top: 40px;
-    }
-    h3 {
-      color: #ff4444;
-      margin-top: 25px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 12px;
-      background: #1a1a1a;
-      padding: 12px;
-      border-left: 4px solid #ff0000;
-      border-radius: 4px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #aaa;
-      border-top: 1px solid #333;
-      margin-top: 50px;
-    }
-    strong {
-      color: #ff4444;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ghost Apps - Bots Premium para Discord</title>
+    <meta name="description" content="Bots premium para Discord. Gerencie vendas, tickets e automações com segurança e personalização." />
+    <meta name="keywords" content="discord, bots, tickets, vendas, automação, Ghost apps, premium" />
+    <meta name="author" content="Ghost Apps" />
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f988.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    poppins: ["Poppins", "sans-serif"],
+                    orbitron: ["Orbitron", "sans-serif"],
+                    montserrat: ["Montserrat", "sans-serif"],
+                },
+                colors: {
+                    Ghost: {
+                        100: "#ffffff",
+                        200: "#f3f4f6",
+                        400: "#9ca3af",
+                        700: "#111827",
+                        900: "#000000",
+                    },
+                },
+            },
+        },
+    };
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #111827;
+            color: #fff;
+            position: relative;
+            overflow-x: hidden;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 1px;
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .feature-card {
+            transition: border-color 0.3s, transform 0.3s;
+            position: relative;
+            background: linear-gradient(135deg, #222 60%, #444 100%);
+            border: 1px solid #333;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            border-color: #9ca3af;
+        }
+        .discord-btn {
+            background: #111827;
+            color: #fff;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+        .discord-btn:hover {
+            background: #000000;
+            color: #fff;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .modal-glow {
+            background: #222;
+        }
+        .svg-brilho {
+            display: none;
+        }
+        .title-glow {
+            font-weight: bold;
+        }
+        a:focus,
+        button:focus {
+            outline: 2px solid #9ca3af;
+            outline-offset: 2px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="py-6 px-4" aria-label="Cabeçalho do site">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-Ghost-700 rounded-full flex items-center justify-center floating">
+                    <i class="fas fa-shark text-white text-2xl"></i>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold text-white title-glow">
+                    <span class="text-Ghost-400">Ghost</span> Apps
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-8" aria-label="Menu principal">
+                <a href="#" class="text-Ghost-400 hover:text-white transition" aria-label="Início">Início</a>
+                <a href="#recursos" class="text-Ghost-400 hover:text-white transition" aria-label="Planos">Planos</a>
+                <a href="#sobre" class="text-Ghost-400 hover:text-white transition" aria-label="Sobre">Sobre</a>
+                <a href="#contato" class="text-Ghost-400 hover:text-white transition" aria-label="Contato">Contato</a>
+            </nav>
+            <a href="https://discord.gg/gQ9VYNPYJW" target="_blank" class="discord-btn py-2 px-6 rounded-full flex items-center">
+                <i class="fab fa-discord mr-2"></i> Entrar no Discord
+            </a>
+        </div>
+    </header>
+    <!-- Hero -->
+    <section class="relative py-20 px-4 overflow-hidden" aria-label="Apresentação">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 title-glow">
+                    Bots <span class="text-Ghost-400">Premium</span> para seu Servidor
+                </h1>
+                <p class="text-xl text-Ghost-400 mb-10">
+                    Aumente o engajamento da sua comunidade com nossos poderosos bots de vendas, tickets e automações.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="https://discord.gg/gQ9VYNPYJW" target="_blank" class="discord-btn py-4 px-8 rounded-full text-lg flex items-center">
+                        <i class="fab fa-discord mr-3"></i> Começar no Discord
+                    </a>
+                    <a href="javascript:void(0);" onclick="abrirModal()" class="bg-transparent border-2 border-Ghost-400 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-Ghost-700 transition">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-lg">
+                    <div class="relative bg-Ghost-700 border border-Ghost-400 rounded-2xl p-8 shadow-2xl floating feature-card">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-Ghost-700 flex items-center justify-center mr-4">
+                                <i class="fas fa-ticket-alt text-Ghost-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold title-glow">Tickets</h3>
+                                <p class="text-Ghost-400">Suporte simplificado e organizado</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-Ghost-700 flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-line text-Ghost-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold title-glow">Automação de Vendas</h3>
+                                <p class="text-Ghost-400">Venda automática e segura</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-Ghost-700 flex items-center justify-center mr-4">
+                                <i class="fas fa-cogs text-Ghost-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold title-glow">Soluções Personalizadas</h3>
+                                <p class="text-Ghost-400">Bot sob medida para sua comunidade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal Saiba Mais -->
+    <div id="saibaMaisModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+        <div class="bg-Ghost-700 rounded-2xl p-8 max-w-xl w-full text-white relative modal-glow">
+            <button onclick="fecharModal()" class="absolute top-4 right-4 text-Ghost-400 text-2xl font-bold hover:text-white" aria-label="Fechar">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 title-glow">Comprar pelo Discord</h2>
+            <p class="mb-3">
+                Para adquirir qualquer um dos nossos bots, entre no nosso servidor do Discord e abra um ticket. Nossa equipe irá te orientar em todo o processo de compra, personalização e ativação do seu bot!
+            </p>
+            <ul class="list-disc ml-5 mb-3">
+                <li>Entre no Discord clicando no botão abaixo</li>
+                <li>Abra um ticket informando o bot desejado</li>
+                <li>Receba atendimento personalizado e finalize sua compra com segurança</li>
+            </ul>
+            <div class="mt-6 flex flex-col gap-2">
+                <a href="https://discord.gg/gQ9VYNPYJW" target="_blank" class="discord-btn py-3 px-6 rounded-full flex items-center justify-center">
+                    <i class="fab fa-discord mr-2"></i> Entrar na Ghost Apps no Discord
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Seção de Preços -->
+    <section id="recursos" class="py-16 px-4 relative overflow-hidden" style="background: none;">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center title-glow">Nossos Planos</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Bot de Vendas -->
+                <div class="rounded-2xl p-8 bg-Ghost-900 border-2 border-green-500 flex flex-col shadow-lg relative">
+                    <span class="absolute -top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Novo</span>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Bot de Vendas</h3>
+                    <p class="text-Ghost-400 mb-4">Faça vendas automáticas no conforto da sua casa.</p>
+                    <div class="text-3xl font-bold text-white mb-2">R$ 8,00 <span class="text-base font-normal">/mês</span></div>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Personalização Completa</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Sistema de Vendas Automatizado</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Integração com Mercado Pago, Efi, Nubank e PicPay</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Sistema de Vendas Semi-Automática</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Logs Detalhados e Histórico de Vendas</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Segurança de Dados</li>
+                    <button onclick="abrirModal()" class="mt-2 mb-6 py-2 px-6 rounded-full bg-green-500 text-white font-bold hover:bg-green-600 transition">
+                        Adquirir
+                    </button>
+                </div>
+                <!-- Bot de Tickets IA -->
+                <div class="rounded-2xl p-8 bg-Ghost-900 border-2 border-blue-500 flex flex-col shadow-lg relative">
+                    <span class="absolute -top-4 left-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">Beta</span>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Bot de Tickets</h3>
+                    <p class="text-Ghost-400 mb-4">Atendimento para discord, personalização total e gestão eficiente.</p>
+                    <div class="text-3xl font-bold text-white mb-2">R$ 7,00 <span class="text-base font-normal">/mês</span></div>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Sistema de Atendimento com IA Inteligente</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Personalização Completa de Interface e Fluxo</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Controle de Atendimento por Horário Comercial</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Gestão Automática de Tickets com Filtros Avançados</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Logs Detalhados e Histórico de Atendimento</li>
+                    <button onclick="abrirModal()" class="mt-2 mb-6 py-2 px-6 rounded-full bg-blue-500 text-white font-bold hover:bg-blue-600 transition">
+                        Adquirir
+                    </button>
+                </div>
+                <!-- Bot de trial -->
+                <div class="rounded-2xl p-8 bg-Ghost-900 border-2 border-yellow-500 flex flex-col shadow-lg relative">
+                    <span class="absolute -top-4 left-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">Beta</span>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Hospedagem</h3>
+                    <p class="text-Ghost-400 mb-4">Hospedagem para Bots para Discord </p>
+                    <div class="text-3xl font-bold text-white mb-2">R$ 5,00 <span class="text-base font-normal">/mês</span></div>
+                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Hospedagem boa</li>
+                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Sem Lags</li>
+                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Ping Brasileiro</li>
+                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Pelo melhor preço</li>
+                        <li><i class="fas fa-check text-yellow-400 mr-2"></i>Com até 512mb de ram</li>
+                    <button onclick="abrirModal()" class="mt-2 mb-6 py-2 px-6 rounded-full bg-yellow-500 text-white font-bold hover:bg-yellow-600 transition">
+                        Adquirir 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sobre -->
+    <section id="sobre" class="py-16 px-4 max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6 title-glow">Sobre a Ghost Apps</h2>
+        <p class="text-Ghost-400 max-w-3xl mx-auto">
+            A Ghost Apps é especialista em bots premium para Discord, focando em automações que simplificam o dia a dia dos administradores e melhoram a experiência dos usuários.
+        </p>
+    </section>
+    <!-- Contato -->
+    <section id="contato" class="py-16 px-4 max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6 title-glow">Contato</h2>
+        <p class="text-Ghost-400 mb-6">
+            Para dúvidas ou suporte, entre em contato pelo nosso Discord.
+        </p>
+        <a href="https://discord.gg/gQ9VYNPYJW" target="_blank" class="discord-btn py-3 px-8 rounded-full flex items-center justify-center mx-auto w-max">
+            <i class="fab fa-discord mr-2"></i> Ghost Apps no Discord
+        </a>
+    </section>
 
-<header>
-  <h1>📜 Regras da Facção - Milícia RP</h1>
-</header>
+    <!-- Scripts -->
+    <script>
+        function abrirModal() {
+            document.getElementById('saibaMaisModal').classList.remove('hidden');
+        }
+        function fecharModal() {
+            document.getElementById('saibaMaisModal').classList.add('hidden');
+        }
 
-<div class="container">
-  <h2>Regras para a Facção</h2>
-  <p><strong>Objetivo:</strong> Garantir a integridade do roleplay e promover um ambiente saudável e colaborativo para todos os membros da facção.</p>
+        // Fecha o modal ao clicar fora da caixa
+        window.onclick = function(event) {
+            const modal = document.getElementById('saibaMaisModal');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        };
 
-  <h3>1. Respeito Mútuo</h3>
-  <ul>
-    <li>Todos os membros devem se tratar com respeito, tanto dentro quanto fora do jogo.</li>
-    <li>É proibida qualquer forma de xenofobia, racismo, homofobia ou comportamento ofensivo.</li>
-    <li>Conflitos internos devem ser resolvidos de forma civilizada, com apoio da hierarquia se necessário.</li>
-  </ul>
-
-  <h3>2. Cumprimento das Regras do Servidor</h3>
-  <ul>
-    <li>A facção deve respeitar todas as regras do servidor.</li>
-    <li>Qualquer infração pode gerar punições para o indivíduo ou a facção.</li>
-    <li>É essencial manter a imersão e seguir as regras de RP.</li>
-  </ul>
-
-  <h3>3. Hierarquia e Organização</h3>
-  <ul>
-    <li>A estrutura da facção deve ser respeitada por todos os membros.</li>
-    <li>O líder deve agir com imparcialidade e ser exemplo de boa conduta.</li>
-    <li>A liderança pode promover ou punir com base no comportamento e desempenho.</li>
-  </ul>
-
-  <h3>4. Atividades da Facção</h3>
-  <ul>
-    <li>Todos devem participar das ações de RP da facção ativamente.</li>
-    <li>A facção deve ter uma história coesa, e não servir apenas a interesses individuais.</li>
-  </ul>
-
-  <h3>5. Interações com Outras Facções</h3>
-  <ul>
-    <li>Respeito e fair-play são obrigatórios em conflitos com outras facções.</li>
-    <li>Não é permitido uso de metagaming ou powergaming para obter vantagem.</li>
-  </ul>
-
-  <h3>6. Conduta Durante Conflitos</h3>
-  <ul>
-    <li>Mantenha o RP realista e evite sair do personagem durante conflitos.</li>
-    <li>Evite atitudes que quebrem a imersão. Use apenas informações do RP.</li>
-  </ul>
-
-  <h3>7. Punições e Sanções</h3>
-  <ul>
-    <li>Infrações podem gerar advertências, rebaixamentos, expulsão ou banimento.</li>
-    <li>A liderança deve aplicar punições com clareza e imparcialidade.</li>
-  </ul>
-
-  <h3>8. Promoções e Rebaixamentos</h3>
-  <ul>
-    <li>Promoções são feitas com base no mérito, lealdade e qualidade do RP.</li>
-    <li>Rebaixamentos ocorrem por atitudes negativas ou quebra de regras.</li>
-  </ul>
-
-  <h3>9. Comportamento Fora do Jogo</h3>
-  <ul>
-    <li>Discord e redes sociais também contam para a imagem da facção.</li>
-    <li>Atitudes negativas fora do RP podem gerar punições internas.</li>
-  </ul>
-
-  <h3>10. Espírito de Equipe</h3>
-  <ul>
-    <li>A colaboração entre membros é essencial para o sucesso da facção.</li>
-    <li>Todos devem contribuir para o crescimento do RP e do servidor.</li>
-  </ul>
-</div>
-
-<footer>
-  Milícia RP &copy; 2025 — Facção fictícia para fins de entretenimento em servidores RP.
-</footer>
-
+        // Fecha modal com ESC
+        window.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                fecharModal();
+            }
+        });
+    </script>
 </body>
 </html>
